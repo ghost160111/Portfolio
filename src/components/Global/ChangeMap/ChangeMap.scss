@@ -1,0 +1,91 @@
+@import "../../scss/helpers/_helpers";
+
+@keyframes enterAnimation {
+  from {
+    transform: translate(-96%, 0%);
+  }
+  to {
+    transform: translate(-96%, -89%);
+  }
+}
+
+:host {
+  display: block;
+  position: fixed;
+  left: 96%;
+  top: 89%;
+  transform: translate(-96%, -89%);
+  z-index: 99;
+  width: auto;
+  height: rem(92);
+  animation: enterAnimation 1.5s ease;
+  transition: all 0.3s ease;
+}
+
+.layers-list {
+  display: flex;
+  gap: rem(16);
+  width: auto;
+  height: 100%;
+  list-style: none;
+}
+
+.layers-button {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  background: transparent;
+  color: var(--white);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+
+  & * {
+    pointer-events: none;
+  }
+
+  &:hover {
+    opacity: 0.75;
+  }
+
+  &.active {
+    & > .layers-button__img {
+      border: rem(2) solid var(--green);
+    }
+
+    & > .layers-button__text {
+      background: var(--green);
+      color: var(--white);
+    }
+  }
+}
+
+.layers-button__img {
+  display: block;
+  width: rem(64);
+  height: rem(64);
+  border: rem(2) solid var(--white);
+  border-radius: 50%;
+  overflow: hidden;
+  transition: all 0.3s ease;
+
+  & > img {
+    height: auto;
+    width: 100%;
+  }
+}
+
+.layers-button__text {
+  display: block;
+  width: auto;
+  height: 100%;
+  background: var(--white);
+  color: var(--black);
+  margin-top: rem(8);
+  border: rem(2) solid var(--green);
+  border-radius: rem(4);
+  padding: rem(2);
+  padding-inline: rem(4);
+  transition: all 0.3s ease;
+  text-wrap: nowrap;
+}

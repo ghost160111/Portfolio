@@ -1,0 +1,15 @@
+@import "../../scss/helpers/_helpers";
+@import "../../scss/components/scrollbar";
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+:host {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: var(--black);
+  overflow-y: auto;
+}

@@ -1,0 +1,116 @@
+@import "../../scss/helpers/_helpers";
+@import "../../scss/layout/variables";
+
+:host {
+  position: relative;
+  width: 100%;
+}
+
+input[type=range] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  background: var(--grey-bg);
+  height: rem(5);
+  border-radius: rem(50);
+
+  background-image: linear-gradient(var(--green), var(--green));
+  background-size: 0% 100%;
+  background-repeat: no-repeat;
+}
+
+/* Chrome, Safari, Edge */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: var(--white);
+
+  width: rem(22);
+  height: rem(22);
+
+  border: rem(2) solid var(--green);
+  border-radius: 50%;
+}
+
+/* Firefox */
+input[type="range"]::-moz-range-thumb {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: var(--white);
+
+  width: rem(16);
+  height: rem(16);
+
+  border: rem(2) solid var(--green);
+  border-radius: 50%;
+}
+
+.range-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  height: rem(48);
+}
+
+.range-popup {
+  position: absolute;
+  left: 0;
+  top: -2rem;
+  visibility: hidden;
+  opacity: 0;
+  min-width: rem(25);
+  height: rem(25);
+  background: var(--green);
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.25rem;
+  transition: all 0.3s ease;
+
+  &.active {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.range-popup__arrow {
+  position: absolute;
+  left: 50%;
+  top: 1rem;
+  transform: translate(-50%, 0) rotate(45deg);
+  min-width: 0.75rem;
+  min-height: 0.75rem;
+  border-top: 0.0625rem solid var(--green);
+  border-left: 0.0625rem solid var(--green);
+  border-radius: 0.125rem 0 0 0;
+  background: var(--green);
+  z-index: -1;
+}
+
+.range-slider {
+  display: block;
+  font-size: rem(16);
+  width: 100%;
+
+  position: relative;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, 0);
+
+  cursor: -webkit-grab;
+  cursor: -moz-grab;
+  cursor: grab;
+
+  &:active {
+    cursor: -webkit-grabbing;
+    cursor: -moz-grabbing;
+    cursor: grabbing;
+  }
+}

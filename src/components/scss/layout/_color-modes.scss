@@ -1,0 +1,52 @@
+body {
+  font-family: "Raleway", sans-serif !important;
+
+  &.theme {
+    overflow-y: hidden;
+
+    &--gray {
+      .header,
+      .footer,
+      .main,
+      .overlay {
+        filter: grayscale(1);
+      }
+    }
+
+    &--dark {
+      .header,
+      .footer,
+      .main {
+        filter: grayscale(1);
+        background-color: var(--black);
+      }
+
+      .header .nav__current-city-tree-amount-today {
+        background-color: var(--dark-bg);
+      }
+
+      .header .nav__map-switch__city-list,
+      .header .nav__user-accessibility__overlay,
+      .header .nav__user-accessibility__overlay__arrow,
+      .header .nav__lang__lang-list,
+      .header .nav__search__dropdown-list,
+      .header .nav__search__input-search-result__list {
+        background-color: var(--black);
+      }
+
+      .overlay {
+        background-color: var(--black);
+      }
+    }
+  }
+
+  &.blurred-bg {
+    .header,
+    .footer,
+    .main,
+    .map {
+      @extend .blurred;
+      overflow-y: hidden;
+    }
+  }
+}

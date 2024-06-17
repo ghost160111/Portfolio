@@ -1,0 +1,17 @@
+@import "./functions";
+@import "./mixins";
+@import "./variables";
+
+:root {
+  --green: #71AA0E;
+  --yellow: #{$yellow};
+  --red: #{$red};
+  --blue: #{$blue};
+  --bg: #{$bg};
+  --inputBg: #{$inputBg};
+  --inputText: #{$inputText};
+  --checkbox: #{$checkbox};
+  --white: #{$white};
+  --black: #{$black};
+  --modalBorder: #{$modalBorder};
+}

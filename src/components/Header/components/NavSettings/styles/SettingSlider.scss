@@ -1,0 +1,127 @@
+@import "../../../../scss/helpers/_helpers";
+@import "../../../../scss/layout/variables";
+
+:host {
+  position: relative;
+  width: 100%;
+}
+
+input[type=range] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  background: var(--grey-bg);
+  height: rem(5);
+  border-radius: rem(50);
+
+  background-image: linear-gradient(var(--green), var(--green));
+  background-size: 0% 100%;
+  background-repeat: no-repeat;
+}
+
+/* Chrome, Safari, Edge */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: var(--white);
+
+  width: rem(22);
+  height: rem(22);
+
+  border: rem(2) solid var(--green);
+  border-radius: 50%;
+}
+
+/* Firefox */
+input[type="range"]::-moz-range-thumb {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: var(--white);
+
+  width: rem(16);
+  height: rem(16);
+
+  border: rem(2) solid var(--green);
+  border-radius: 50%;
+}
+
+.range-value {
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  filter: opacity(0);
+  visibility: hidden;
+
+  transition: all 0.5s ease;
+
+  &.active {
+    filter: opacity(1);
+    visibility: visible;
+  }
+}
+
+.range-wrapper {
+  &::before,
+  &::after {
+    content: "Aa";
+
+    position: absolute;
+    color: var(--white);
+
+    font-family: "Golos Text", sans-serif;
+    line-height: rem(24);
+
+    top: rem(-10);
+  }
+
+  &::before {
+    font-weight: 400;
+    font-size: rem(16);
+
+    left: 0;
+    transform: translate(0, 0);
+  }
+
+  &::after {
+    font-weight: 600;
+    font-size: rem(18);
+
+    left: 100%;
+    transform: translate(-100%, 0);
+  }
+}
+
+.range-slider {
+  display: block;
+  font-size: rem(16);
+  width: 80% !important;
+
+  position: relative;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, 0);
+
+  cursor: -webkit-grab;
+  cursor: -moz-grab;
+  cursor: grab;
+
+  &:active {
+    cursor: -webkit-grabbing;
+    cursor: -moz-grabbing;
+    cursor: grabbing;
+  }
+}
+
+.range {
+  &::before {
+    content: "Aa";
+  }
+
+  &::after {
+    content: "Aa";
+  }
+}

@@ -1,0 +1,83 @@
+@import "../../scss/helpers/_helpers";
+
+@keyframes entering {
+  from {
+    transform: translate(150%, -65%);
+  }
+
+  to {
+    transform: translate(-97%, -65%);
+  }
+}
+
+:host {
+  position: fixed;
+  left: 97%;
+  top: 75%;
+  transform: translate(-97%, -75%);
+
+  animation: entering 2s ease;
+  z-index: 1500;
+
+  @media screen and (max-width: 1024px) {
+    top: 90%;
+    transform: translate(-97%, -90%);
+  }
+}
+
+.expanded {
+  font-size: rem(24);
+  width: rem(380);
+  padding-left: rem(24);
+  padding-right: rem(24);
+  color: var(--white);
+}
+
+.plant-trees-reference {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 0;
+  line-height: rem(32);
+
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: right;
+
+  height: rem(80);
+  width: rem(80);
+
+  transition: all 0.3s ease;
+  transition-delay: 0.3s;
+  border-radius: rem(40);
+  color: var(--green);
+
+  background: var(--green);
+  background-image: url("@/assets/images/plant-tree.svg");
+  background-repeat: no-repeat;
+  background-size: rem(80);
+
+  &--expanded {
+    @extend .expanded;
+  }
+
+  &:hover {
+    font-size: rem(24);
+    width: rem(370);
+    padding-left: rem(24);
+    padding-right: rem(24);
+    color: var(--white);
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
+
+  @media screen and (max-width: 1024) {
+    width: rem(40);
+    height: rem(40);
+  }
+}

@@ -1,0 +1,25 @@
+@import "../../../scss/helpers/_helpers";
+
+.full-size {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+:host,
+.container {
+  @extend .full-size;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+
+  padding-inline: rem(64);
+
+  & > h2 {
+    text-align: center;
+  }
+}
