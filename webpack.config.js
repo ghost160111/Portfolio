@@ -116,7 +116,7 @@ const webpackConfig = {
     compress: true,
     hot: true,
     historyApiFallback: true,
-    port: 9000,
+    port: 4550,
     headers: {
       "Access-Control-Allow-Origin": "*",
       "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, PATCH, OPTIONS",
@@ -128,7 +128,7 @@ const webpackConfig = {
     new HTMLWebpackPlugin({
       filename: "index.html",
       template: "./index.html",
-      favicon: "./assets/images/tree-icon.svg"
+      favicon: "https://portfolio.devcybercode.com/static/main/images/logo/footerlogo.svg"
     }),
     new MiniCssExtractPlugin({
       filename: fileName("css")
